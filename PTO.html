@@ -1,0 +1,44 @@
+oia V1
+5hrs per paycheck
+Bi-weekly
+PTO for 1yr
+
+--------------
+V2
+1-5 = 5hrs
+>5yrs = 6hrs
+>10yrs = 7hrs
+PTO for 1 yr in weeks
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>PTO Program</h1>
+    <li>DISPLAY "This is a simple program that outputs how many hours you ear a year for PTO(Paid Time Off)"</li>
+   <ol>
+       <li>START</li>
+       <li>SET INT paychecksPerYear = 26</li>
+       <li>SET INT hrsPerPaychecks = 5</li>
+       <li>SET INT totalHoursPerYear = hoursPerPaycheck * PaychecksPerYear</li>
+       <li>DISPLAY "You earn totalHoursPerYear hours per year."</li>
+       <li>END</li>
+   </ol>
+   <input type="text" id="payChecksPerYear" placeholder="Pay Checks a Year">
+   <input type="text" id="hrsPerPayChecks" placeholder="Hours worked per check">
+   <button oneclick="hrsPerPayChecks" >submit</button>
+   <script>
+       var payChecksPerYear
+       function hrsPerPayChecks() {
+           var payChecksPerYear = document.getElementById("payChecksPerYear").value;
+           var payChecksPerYear = 26;
+           var hrsPerPayChecks = 5;
+           var totalHoursPerYear = (hrsPerPayChecks * payChecksPerYear);
+       }
+   </script>
+</body>
+</html>

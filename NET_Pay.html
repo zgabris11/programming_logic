@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <p>NET pay calculator. It takes your GROSS pay and then deducts federal, state, FICA. I has the option to deuct any additional amount from your check. Then it displays your NET pay.</p> 
+   <!--FED 15%-->
+   <!--STATE 5%-->
+   <!--FICA 7.62%-->
+   <!--IF ANY ADDITIONAL-->
+   <ol>
+       <li>START</li>
+       <li>DISPLAY "what is your gross pay"</li>
+       <li>INPUT grosspay</li>
+       <li>DISPLAY "we are deducting federal tax"</li>
+       <li>DISPLAY "we are deducting state tax"</li>
+       <li>DISPLAY "we are decducting FICA"</li>
+       <li>PROCESS netpay= gross - (fedTax + stateTax + fica)</li>
+       <li>DISPLAY "Would you like to make any additional deductions?"yes/no</li>
+       <li>INPUT ans</li>
+       <li>PROCESS if ans === true/yes
+            <ul>
+                <li>DISPLAY "enter additional amount:"</li>
+                <li>INPUT additionaldeduction</li>
+                <li>PROCESS netpay= netpay-addtionaldeduction</li>
+            </ul>
+        </li>
+        <li>DISPLAY "your NET pay is "netpay"</li>
+       <li>END</li>
+       <input type="text" id="grossPay">
+       <input type="text" id="netPay">
+       <button onclick="netPay()">submit</button>
+       <span id="display"></span>
+       <script>
+            var grossPay
+           function netPay() {
+               var grossPay = document.getElementById("grossPay").value;
+               var display = document.getElementById("display");
+               var fed = .15;
+               var state = .05;
+               var FICA = .0762;              
+               var additionalWithHolding = document.getElementById("netPay").value;;
+               display.innerHTML = (grossPay - ((fed + state + FICA) * grossPay - additionalWithHolding))
+           }
+       </script>
+       
+   </ol>
+</body>
+</html>
